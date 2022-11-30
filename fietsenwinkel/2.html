@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>hallo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#myPage">ROC Fietsen</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="1.html">Over Ons</a></li>
+          <li><a href="2.html">Producten</a></li>
+          <li><a href="3.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron text-center">
+    <span class="dikketekst1">ROC 'N ROLL!</span>
+    <p>Voor de beste fietsdeals!</p>
+  </div>
+
+
+  <!-- Container (Services Section) -->
+  <div id="services" class="container-fluid text-center">
+    <span class="dikketekst2">Onze fietsen</span>
+    <span class="dikketekst4">Kies en bestel!</span>
+    <br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <img src="images/fiets1.jpg" alt=""><br>
+        <span class="dikketekst4">LOVE</span>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/fiets2.jpg" alt=""><br>
+        <span class="dikketekst4">LOVE</span>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/fiets3.jpg" alt=""><br>
+        <span class="dikketekst4">JOB DONE</span>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <img src="images/fiets4.jpg" alt=""><br>
+        <span class="dikketekst4">GREEN</span>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/fiets1.jpg" alt=""><br>
+        <span class="dikketekst4">Herenfiets</span>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/fiets2.jpg" alt=""><br>
+        <h4 style="color:#303030;">HARD WORK</span>
+          <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Image of location/map -->
+  <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+  <footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function () {
+        $(".slideanim").each(function () {
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
+
+</body>
+
+</html>
